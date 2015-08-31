@@ -1,0 +1,24 @@
+{
+  "require": {
+    "composer/composer": "dev-master",
+    "gabordemooij/redbean": "~4.2",
+    "webmozart/console": "~1.0@beta",
+    "nategood/httpful": "0.2.*",
+    "symfony/filesystem": "~2.7"
+  },
+  "autoload":{
+    "classmap":[
+        "Command","Config"
+    ],
+    "psr-4": { "Cpm\\": "Cpm/" }
+  },
+  "autoload-dev":{
+    "psr-4": { "Cpm\\": "Cpm/" }
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "http://packagist.phpcomposer.com"
+    }
+  }
+}
