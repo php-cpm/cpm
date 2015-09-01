@@ -14,11 +14,5 @@
   },
   "autoload-dev":{
     "psr-4": { "Cpm\\": "Cpm/" }
-  },
-  "repositories": {
-    "packagist": {
-      "type": "composer",
-      "url": "http://packagist.phpcomposer.com"
-    }
   }
 }

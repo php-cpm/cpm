@@ -21,9 +21,12 @@ class BuildCommandHandler
     public $packages_json = '/packages.json';
     public $package_json = "/p/%package%$%hash%.json";
     public $repository_path = "packagist";
+    public $server_url="http://10.1.169.16:12801/";
     public function handle(Args $args, IO $io, Command $command)
     {
-
+        /**
+         * 1.初始化
+         */
         $limit_array = $this->getLimitList() ? $this->getLimitList(): $this->rebuildLimitArray();
 //        echo count($all_array)."\r\n";
 //        echo count($limit_array);
@@ -36,8 +39,12 @@ class BuildCommandHandler
         $data['sha256'] = hash('sha256',$limit_json);
         $package_json = file_get_contents($this->repository_path . "/packages-packagist.json");
         $package = json_decode($package_json,TRUE);
-
-        $package['provider-url'] = '/packages/%package%.json';
+        $package['mirrors'] = array();
+        $package['mirrors'][] = array(
+            'dist-url'=>$this->server_url."files/%package%/%reference%.%type%",
+            'preferred'=>true
+        );
+        $package['providers-url'] = '/packages/%package%.json';
         $package['provider-includes'] = array();
         $package['provider-includes']['p/limit.json'] = $data;
         $fs = new Filesystem();
@@ -221,7 +228,6 @@ class BuildCommandHandler
 function HttpSendLong($url)
 {
     if (USE_PROXY) {
-        echo 1;
         return \Httpful\Request::get($url)->timeout(300)->useProxy('10.199.75.12', '8080')->send();
     }
     return \Httpful\Request::get($url)->timeout(60)->send();
