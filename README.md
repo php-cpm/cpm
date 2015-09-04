@@ -60,3 +60,5 @@ bin/cpm-server build
 ```
 可以在本地重建一套静态composer库，配置文件尚未独立出来，有些url地址还是需要手工修改
 
+
+Github: https://github.com/php-cpm/cpm
