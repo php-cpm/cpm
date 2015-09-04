@@ -43,3 +43,20 @@ composer install monolog/monolog
 实际生成文件大小约为215MB
 
 相比原来全量下载8W项目包共600MB体积极大的减少，并且测试获取常见、优质项目资源稳定高效
+
+
+HOW TO USE
+
+在现在的开发环境中迁出一份代码
+
+从项目目录执行命令
+
+```
+bin/cpm search monolog
+```
+可以查询带有monolog相关字眼的项目，以下载和收藏量做排序
+```
+bin/cpm-server build
+```
+可以在本地重建一套静态composer库，配置文件尚未独立出来，有些url地址还是需要手工修改
+
