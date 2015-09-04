@@ -45,7 +45,7 @@ composer install monolog/monolog
 相比原来全量下载8W项目包共600MB体积极大的减少，并且测试获取常见、优质项目资源稳定高效
 
 
-HOW TO USE
+### HOW TO USE
 
 在现在的开发环境中迁出一份代码
 
@@ -60,5 +60,11 @@ bin/cpm-server build
 ```
 可以在本地重建一套静态composer库，配置文件尚未独立出来，有些url地址还是需要手工修改
 
+### ENVIROMENT
+
+PHP 5.3+
+Sqlite 3+
+
+### MORE TO SAY
 
 Github: https://github.com/php-cpm/cpm
