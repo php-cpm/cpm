@@ -43,4 +43,3 @@ composer install monolog/monolog
 实际生成文件大小约为215MB
 
 相比原来全量下载8W项目包共600MB体积极大的减少，并且测试获取常见、优质项目资源稳定高效
-
