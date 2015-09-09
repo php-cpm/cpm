@@ -4,7 +4,8 @@
     "gabordemooij/redbean": "~4.2",
     "webmozart/console": "~1.0@beta",
     "nategood/httpful": "0.2.*",
-    "symfony/filesystem": "~2.7"
+    "symfony/filesystem": "~2.7",
+    "phpunit/phpunit": "~4.8"
   },
   "autoload":{
     "classmap":[
@@ -14,5 +15,11 @@
   },
   "autoload-dev":{
     "psr-4": { "Cpm\\": "Cpm/" }
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "http://packagist.phpcomposer.com"
+    }
   }
 }

@@ -21,6 +21,10 @@ class CpmServerApplicationConfig extends DefaultApplicationConfig
                 ->setDescription('download metadata from packagist.org')
                 ->setHandler(new BuildCommandHandler())
             ->end()
+            ->beginCommand('download')
+            ->setDescription('download two from packagist.org')
+            ->setHandler(new DownloadCommandHandler())
+            ->end()
         ;
     }
 }
